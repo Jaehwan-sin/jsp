@@ -7,6 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Hello jsp</h1>
+	<h2>선언문 샘플</h2>
+	<%!
+		String ID = "blue";
+		public String getId(){
+			return ID;
+		}
+	%>
+	
+	<h2>id변수 : <%=ID %></h2>
+	<h2>메소드 접근 : <%=getId() %></h2>
+		
 </body>
-</html> 
+</html>
