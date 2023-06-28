@@ -18,7 +18,7 @@
 		<option value="green">초록</option>
 		<option value="red">빨강</option>
 		<option value="yellow">노랑</option>
-	</select>
+	</select> 
 	<br />
 	<input type="submit" value="send"/>
 </form>

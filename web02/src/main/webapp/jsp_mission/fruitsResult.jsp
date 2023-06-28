@@ -14,7 +14,7 @@ String fruits = request.getParameter("fruits");
 </head>
 <body>
 <h2>fruitsResult</h2>
-이름 : <%=name %> <br />
+이름 : <%=name %> <br /> 
 나이 : <%=age %> <br />
 과일 : <%=fruits %> <br />
 

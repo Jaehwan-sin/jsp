@@ -15,7 +15,7 @@
 		text-align : center;
 	}
 	table tr td{
-		border : 2px solid green;
+		border : 2px solid green; 
 	}
 </style>
 <%

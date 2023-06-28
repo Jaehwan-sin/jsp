@@ -10,7 +10,7 @@
 	<h2>선언문 샘플</h2>
 	<%!
 		String ID = "blue";
-		public String getId(){
+		public String getId(){ 
 			return ID;
 		}
 	%>

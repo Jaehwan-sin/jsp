@@ -26,5 +26,5 @@ required는 내용이 꼭 있어야한다, 즉 꼭 입력해라
 
 
 
-</body>
+</body> 
 </html>

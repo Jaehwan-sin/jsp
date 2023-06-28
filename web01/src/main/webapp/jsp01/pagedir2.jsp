@@ -10,7 +10,7 @@
     isThreadSafe="true"
     
     %>
-    
+     
     <!-- 
     session="true" - 세션 사용여부
     buffer="8kb" - 버퍼 용량

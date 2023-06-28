@@ -12,7 +12,7 @@ String color = request.getParameter("color");// 값을 받는다. ""는 앞에�
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body> 
 <h1>ifTest.jsp</h1>
 이름 : <%=name %> <br />
 색상 : <%=color %> <br />

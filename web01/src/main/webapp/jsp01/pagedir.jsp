@@ -14,4 +14,4 @@
 	<h2>page 디렉티브(지시자) info속성</h2>
 	<%=getServletInfo() %>
 </body>
-</html>
+</html> 

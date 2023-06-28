@@ -11,4 +11,4 @@
 <body bgcolor="<%=back_c %>">
 	aaa
 </body>
-</html>
+</html> 

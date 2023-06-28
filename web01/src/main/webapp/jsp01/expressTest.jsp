@@ -13,7 +13,7 @@
 		border : 2px solid red;
 		border-collapse : collapse;
 	}
-	table tr td{
+	table tr td{ 
 		border : 2px solid green;
 	}
 </style>

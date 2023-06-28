@@ -12,7 +12,7 @@
 		int val = 6;
 		if(val>5){
 			String str = "변수 val이 5보다 크다.";
-		
+		 
 	%>
 		<%=str %>
 	
