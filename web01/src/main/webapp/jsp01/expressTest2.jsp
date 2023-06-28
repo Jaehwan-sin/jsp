@@ -33,7 +33,6 @@
 		</tr>
 		<%
 			for(int i=0; i<haknos.length; i++){
-						
 		%>
 		<tr>
 			<td><%=haknos[i] %></td>
@@ -45,6 +44,14 @@
 			}
 		%>
 	</table>
+	
+	<hr>
+	<%
+	int x = 10;
+	int y = (x>=10)? 20 : x ;//삼항연산자
+	out.print("y값 : "+y);//out.print는 html영역에 표현할수있다.
+	%>
+	</hr>
 	
 </body>
 </html>
