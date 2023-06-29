@@ -7,14 +7,10 @@
 <title>Insert title here</title>
 </head> 
 <body>
-<h2>sessionTestForm1</h2>
+<h2>sessionTestForm2</h2>
 <!-- 로그인 상태와 로그인 안된 상태 구분 -->
 
-<%
-	if(session.getAttribute("id")==null){// 로그인이 안된 상태
-%>
-
-<form action="sessionTest1.jsp">
+<form action="sessionTest2.jsp">
 
 	아이디 :
 	<input type="text" id="id" name="id" placeholder="blue" /> <br />
@@ -24,15 +20,5 @@
 	
 </form>
 
-<%
-	} else {
-%>
-	<form action="logout.jsp">
-		<input type="submit" value="logout" />
-	</form>
-<%
-	}
-	out.print("session : "+session.getAttribute("id"));
-%>
 </body>
 </html>
