@@ -22,7 +22,6 @@
 		<option value="banana">바나나</option>
 		<option value="grape">포도</option>
 		<option value="strawberry">딸기</option>
-		<option value="SJH">신재환깃허브풀테스트 0628 2119</option>
 	</select> <br />
 	<input type="submit" value="send" />
 </form>
