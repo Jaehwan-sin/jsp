@@ -39,10 +39,7 @@
 <%
 	}
 	out.print("session : "+session.getAttribute("hakbun"));
-	%>
-	<br />
-	<%
-	out.print("취미 : "+session.getAttribute("stuhobby"));
 %>
+	
 </body>
 </html>
