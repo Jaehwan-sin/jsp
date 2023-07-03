@@ -1,4 +1,6 @@
-<%@page import="java.sql.*"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,17 +10,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>noticeEditProc</h2>
-<!-- DB에 해당 글을 수정 -->
-
+<h2>noticeRegProc</h2>
 <%
-	request.setCharacterEncoding("utf-8");
-	String seq = request.getParameter("c");
+	request.setCharacterEncoding("UTF-8");
 	String title = request.getParameter("title");
 	String content = request.getParameter("content");
-	
-	String sql = "update notices "+"set title=?,content=? where seq="+seq;
-	/* "update notices "+"set title=?,content=? where seq=?"; 이렇게도 가능 */
+	/* insert 작업 */
+	String sql = "insert into notices values("+"(select max(to_number(seq))+1 from notices)"+",?,'CJ',?,sysdate,0)";
+	/* seq가 1씩 증가해야해서 서브쿼리문으로 max값에서 +1된 값이 들어가도록한다. */
 	/* DB연결 */
 	Class.forName("oracle.jdbc.driver.OracleDriver");
 	String url = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -30,10 +29,9 @@
 	pstmt.setString(1, title);
 	pstmt.setString(2, content);
 	pstmt.executeUpdate();
-	
-	response.sendRedirect("noticeDetail.jsp?c="+seq);
+	/* 목록으로 이동 */
+	response.sendRedirect("notice.jsp");
 %>
-
 </body>
 </html>
 <%

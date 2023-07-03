@@ -1,0 +1,44 @@
+table{
+	border-collapse: collapse;
+	text-align : center;
+	border-left : 0; border-right : 0;
+}
+tr{
+	height : 40px; 
+	padding : 10px;
+}
+td{
+	text-decoration: none;
+}
+tr:nth-child(2n+1){
+	background-color : #f1f1f1;
+}
+tr:first-child{
+	 height : 50px;
+}
+tr>td>img{
+	width : 30px; height : 30px;
+}
+#boardtitle{
+	font-size : large; font-weight : bold;
+	text : underline;
+}
+a:visited {
+	color : black;
+	text-decoration: underline;
+}
+#text{
+	color : #868e96;
+}
+a:link {
+  color : pink;
+  text-decoration: none;
+}
+a:hover {
+  color : red;
+  text-decoration: underline;
+}
+
+#btn{
+	margin-top : 10px;
+}

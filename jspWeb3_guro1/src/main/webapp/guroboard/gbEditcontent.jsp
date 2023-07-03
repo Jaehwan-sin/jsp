@@ -8,17 +8,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>noticeEditProc</h2>
-<!-- DB에 해당 글을 수정 -->
+<h2>gbEditcontent</h2>
 
 <%
 	request.setCharacterEncoding("utf-8");
-	String seq = request.getParameter("c");
+	String no = request.getParameter("c");
 	String title = request.getParameter("title");
 	String content = request.getParameter("content");
 	
-	String sql = "update notices "+"set title=?,content=? where seq="+seq;
-	/* "update notices "+"set title=?,content=? where seq=?"; 이렇게도 가능 */
+	String sql = "update guroboard "+"set title=?, content=? where no="+no; 
 	/* DB연결 */
 	Class.forName("oracle.jdbc.driver.OracleDriver");
 	String url = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -31,9 +29,8 @@
 	pstmt.setString(2, content);
 	pstmt.executeUpdate();
 	
-	response.sendRedirect("noticeDetail.jsp?c="+seq);
+	response.sendRedirect("gbcontent.jsp?c="+no);
 %>
-
 </body>
 </html>
 <%
