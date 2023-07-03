@@ -13,12 +13,19 @@
 	#table{
 		text-align: center;
 		width : 700px; height : 300px;
+		border-collapse: collapse;
+	}
+	/* tr:first-child{
+		background-color : red;
+	} */
+	tr:nth-child(2n+1){
+		background-color : #f2f2f2;
 	}
 </style>
 </head>
 <body>
 <h2>prfilter</h2>
-<h3>데이터 조회</h3>
+<h3>데이터 정렬 조회</h3>
 
 	<table id="table" border= 2px solid red;>
 		<tr>
