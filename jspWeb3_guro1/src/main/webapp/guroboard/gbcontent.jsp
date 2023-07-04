@@ -60,9 +60,9 @@
 			</tr>
 		</tbody>
 </table>
-<a href="gbEdit.jsp?c=<%=rs.getString("no") %>">수정하기</a>
-<a href="gbDelete.jsp?c=<%=rs.getString("no") %>">삭제</a>
-<a href="guroboard.jsp">목록</a>
+<button style=margin-top:10px;><a href="gbEdit.jsp?c=<%=rs.getString("no") %>">수정하기</a></button>
+<button><a href="gbDelete.jsp?c=<%=rs.getString("no") %>">삭제</a></button>
+<button><a href="guroboard.jsp">목록</a></button>
 </body>
 </html>
 <%

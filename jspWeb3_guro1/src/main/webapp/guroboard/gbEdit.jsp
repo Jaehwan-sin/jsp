@@ -67,7 +67,7 @@
 </table>
 <input type="hidden" name="c" value="<%=rs.getString("no") %>"/>
 <input type="submit" value="수정" />
-<a href="gbcontent.jsp?c=<%=rs.getString("no") %>">취소</a>
+<button style=margin-top:10px;><a href="gbcontent.jsp?c=<%=rs.getString("no") %>">취소</a></button>
 </form>
 
 </body>
