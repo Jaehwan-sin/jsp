@@ -42,5 +42,17 @@ function goJoinForm() {
 	<input type="submit" value="login" />
 	<input type="button" value="join" onclick="goJoinForm()" />
 </form>
+<%
+	String msg = request.getParameter("msg");
+	if(msg!=null && msg.equals("0")) {
+		out.println("<br>");
+		out.println("<font color='red' size='5'>비밀번호 확인</font>");
+	} else if(msg!=null && msg.equals("-1")) {
+		out.println("<br>");
+		out.println("<font color='red' size='5'>아이디 확인</font>");
+	}
+%>
+
+
 </body>
 </html>

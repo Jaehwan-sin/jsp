@@ -11,7 +11,7 @@
 <p style="color:red;">
 <%
 if(request.getAttribute("errors")!=null) {
-	List <String> errors = (List <String>)request.getAttribute("errors");
+	List <String> errors = (List <String>)request.getAttribute("errors");// getAttribute 요소의 속성값 가져오는것
 	for(int i=0; i<errors.size(); i++){
 %>
 	<%=errors.get(i) %> <br />

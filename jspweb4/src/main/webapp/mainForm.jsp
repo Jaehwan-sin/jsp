@@ -18,11 +18,10 @@
 		response.sendRedirect("login/loginForm.jsp");
 	} else {
 %>		
-	<%=session.getAttribute("sessionID") %>님 로그인 되었습니다.
+	<%=session.getAttribute("sessionID") %>님 로그인 되었습니다. <br /> <br />
 	<input type="button" value="logout" onclick="logoutProc()" />
 <%
 	}
-
 %>
 </body>
 </html>

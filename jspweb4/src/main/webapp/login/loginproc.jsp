@@ -40,13 +40,13 @@
 	}
 	System.out.println("xxxxx : "+x);
 	 //x값에 따라서 msg라는 파람값을 다이나믹하게 전달
-	if (x==1) {
+	if (x==1) {// 성공
 		session.setAttribute("sessionID", id);
 		msg="../mainForm.jsp";
-	} else if (x==0) {
-		msg="../mainForm.jsp?msg=0";
+	} else if (x==0) {// 실패
+		msg="loginForm.jsp?msg=0";
 	} else {
-		msg="../mainForm.jsp?msg=-1";
+		msg="./loginForm.jsp?msg=-1";
 	}
 		response.sendRedirect(msg);
 %>
