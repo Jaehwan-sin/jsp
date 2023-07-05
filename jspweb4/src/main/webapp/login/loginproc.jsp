@@ -26,7 +26,7 @@
 	ResultSet rs = pstmt.executeQuery();
 	//로그인 경우의 수
 	String ypass="";
-	int x = -1;
+	int x = -1;// 숫자로 로그인 성공/실패의 경우의 수를 만들어 그에 따라 메시지 전달
 	String msg = "";
 	
 	if(rs.next()) {
@@ -41,7 +41,7 @@
 	System.out.println("xxxxx : "+x);
 	 //x값에 따라서 msg라는 파람값을 다이나믹하게 전달
 	if (x==1) {// 성공
-		session.setAttribute("sessionID", id);
+		session.setAttribute("sessionID", id);// session에다 sessionID라는 이름으로 id를 전달
 		msg="../mainForm.jsp";
 	} else if (x==0) {// 실패
 		msg="loginForm.jsp?msg=0";
