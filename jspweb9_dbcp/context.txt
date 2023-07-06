@@ -1,0 +1,14 @@
+ <Resource
+    name="jdbc/noticeXe"
+    auth="Container"
+    driverClassName="oracle.jdbc.driver.OracleDriver"
+    type="javax.sql.DataSource"
+    url="jdbc:oracle:thin:@localhost:1521:xe"
+    username="hr"
+    password="123456"
+    loginTimeout="50"
+    maxActive="50"
+    maxIdle="20"
+    maxWait="5000"
+    testOnBorrow="true"
+    />
