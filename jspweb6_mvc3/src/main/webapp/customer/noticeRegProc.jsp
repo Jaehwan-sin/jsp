@@ -48,7 +48,3 @@
 %>
 </body>
 </html>
-<%
-	// pstmt.close();
-	// con.close(); 
-%>
