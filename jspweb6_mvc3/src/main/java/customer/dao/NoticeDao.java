@@ -50,7 +50,7 @@ public class NoticeDao {
 		pstmt.setString(1, tit);
 		pstmt.setString(2, content);
 		pstmt.setString(3, seq);
-		pstmt.executeUpdate(); 
+		pstmt.executeUpdate();  
 	}
 	
 	public int delete(String seq) throws Exception {

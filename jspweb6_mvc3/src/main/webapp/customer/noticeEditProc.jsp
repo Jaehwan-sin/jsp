@@ -14,7 +14,7 @@
 <!-- DB에 해당 글을 수정 -->
 
 <%
-	request.setCharacterEncoding("utf-8");
+	/* request.setCharacterEncoding("utf-8");
 	String seq = request.getParameter("c");
 	String title = request.getParameter("title");
 	String content = request.getParameter("content");
@@ -28,7 +28,7 @@
 	//dao.update(n);//모델로 보내는 형식
 	dao.update2(seq,title,content);
 	
-	response.sendRedirect("noticeDetail.jsp?c="+seq);
+	response.sendRedirect("noticeDetail.jsp?c="+seq); */
 %>
 
 </body>

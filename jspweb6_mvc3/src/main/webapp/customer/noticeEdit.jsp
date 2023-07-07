@@ -16,7 +16,7 @@
 <body>
 <h2>noticeEdit</h2>
 
-<form action="noticeEditProc.jsp" method="post">
+<form action="noticeEditProc.do" method="post">
 <table class="twidth">
 	<colgroup>
 		<col width="15%" />

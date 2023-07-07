@@ -13,17 +13,7 @@
 
 <%
 	String seq = request.getParameter("c");
-	/* String sql = "delete from notices where seq="+seq; */
-
-	/* //DB연결
-	Class.forName("oracle.jdbc.driver.OracleDriver");
-	String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	String user = "hr";
-	String pw = "123456";
-	Connection con = DriverManager.getConnection(url,user,pw);
-	//실행
-	PreparedStatement pstmt = con.prepareStatement(sql);
-	int del = pstmt.executeUpdate(); */
+	
 	
 	NoticeDao dao = new NoticeDao();
 	int del = dao.delete(seq);

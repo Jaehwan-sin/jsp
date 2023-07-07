@@ -10,18 +10,20 @@ import customer.contoller.Controller;
 import customer.dao.NoticeDao;
 import customer.vo.Notice;
 
-public class NoticeEditController implements Controller {
+public class NoticeDelProcController implements Controller {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("NoticeEditController");
+		System.out.println("NoticeDelProcController");
 		
 		String seq = request.getParameter("c");
-		NoticeDao dao = new NoticeDao();
-		Notice n = dao.getNotice(seq);
 		
-		/* n값을 noticeDetail.jsp로 보내기 위해 forward처리 */
-		request.setAttribute("n", n);//request에 n이라는 이름으로 n을 보내겠다
-		request.getRequestDispatcher("noticeEdit.jsp").forward(request, response);
+		NoticeDao dao = new NoticeDao();
+		int del = dao.delete(seq);
+		
+//		if(del>0){
+//			response.sendRedirect("notice.jsp");
+//		} else
+//			out.write("삭제오류");
 
 	}
 }

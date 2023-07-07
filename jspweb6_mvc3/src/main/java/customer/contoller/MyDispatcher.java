@@ -7,8 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import customer.controller.notice.NoticeDelProcController;
 import customer.controller.notice.NoticeDetailController;
 import customer.controller.notice.NoticeEditController;
+import customer.controller.notice.NoticeEditProcController;
+import customer.controller.notice.NoticeRegController;
+import customer.controller.notice.NoticeRegProcController;
 
 public class MyDispatcher extends HttpServlet {// java단에서 jsp를 받으려면 httpservlet을 사용해야한다.
 	// 1단계, HTTP 요청 받음
@@ -22,15 +26,25 @@ public class MyDispatcher extends HttpServlet {// java단에서 jsp를 받으려
 		String com = uri.substring(conPath.length());
 		System.out.println("com : "+com);
 		
-		NoticeDetailController controller1 = new NoticeDetailController();
-		NoticeEditController controller2 = new NoticeEditController();
+		// NoticeDetailController controller1 = new NoticeDetailController();
+		// NoticeEditController controller2 = new NoticeEditController();
+		Controller controller = null;
 		
-		try {
+		try {// 신호에 따라 생성되는 객체가 달라진다.
 			if (com.equals("/customer/noticeDetail.do")) {
-				controller1.execute(request,response);
+				controller = new NoticeDetailController(); // 객체생성
 			} else if (com.equals("/customer/noticeEdit.do")) {
-				controller2.execute(request,response);
-			}
+				controller = new NoticeEditController(); // 객체생성
+			} else if (com.equals("/customer/noticeEditProc.do")) {
+				controller = new NoticeEditProcController(); // 객체생성
+			} else if (com.equals("/customer/noticeReg.do")) {
+				controller = new NoticeRegController(); // 객체생성
+			} else if (com.equals("/customer/noticeRegProc.do")) {
+				controller = new NoticeRegProcController(); // 객체생성
+			} else if (com.equals("/customer/noticeDelProc.do")) {
+				controller = new NoticeDelProcController(); // 객체생성
+			} 
+				controller.execute(request, response);// 신호에 따라 생긴 객체를 실행한다.
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

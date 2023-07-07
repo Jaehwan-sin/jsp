@@ -9,7 +9,8 @@
 <body>
 <h2>noticeReg</h2>
 
-<form action="noticeRegProc.jsp" method="post">
+<form action="noticeRegProc.do" method="post">
+
 	제목 : <input type="text" name="title" /> <br />
 	첨부파일 : <input type="file" name="txtFile" /> <br />
 	내용 : 
