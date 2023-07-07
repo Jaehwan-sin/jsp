@@ -12,7 +12,7 @@
 <h2>jobDetail</h2>
 <%
 	String no = request.getParameter("c");
-	String sql = "select no,work,company,title,career,academic_ability,prefer_basic,prefer_language,employment_type,salary,location,time,position from jobhm";
+	String sql = "select no,work,company,title,career,academic_ability,prefer_basic,prefer_language,employment_type,salary,location,time,position from jobhm where no="+no;
 	
 	Connection con = DBCon.getConnection();
 	Statement stmt = con.createStatement();
@@ -38,7 +38,7 @@
 </table>
 <hr />
 <a href="jobEdit.jsp?c=<%=rs.getString("no") %>">수정</a>
-<a href="#">삭제</a>
+<a href="jobDelProc.jsp?c=<%=rs.getString("no") %>">삭제</a>
 <a href="jobNotice.jsp?c=<%=rs.getString("no") %>">목록</a>
 </body>
 </html>

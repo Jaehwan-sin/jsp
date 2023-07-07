@@ -1,6 +1,6 @@
 package jobkorea.vo;
 
-public class jobNotice {
+public class JobNotice {
 	
 	private String no;
 	private String work;

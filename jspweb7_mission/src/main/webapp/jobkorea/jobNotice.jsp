@@ -22,10 +22,11 @@
 <body>
 <h2>jobNotice</h2>
 <%
-	String sql = "select no,work,company,title,career,academic_ability,prefer_basic,prefer_language,employment_type,salary,location,time,position from jobhm";
+	String sql = "select no,work,company,title,career,academic_ability,prefer_basic,prefer_language,employment_type,salary,location,time,position from jobhm order by no";
 	Connection con = DBCon.getConnection();
 	Statement stmt = con.createStatement();
 	ResultSet rs = stmt.executeQuery(sql);
+	
 %>
 <table width="1600" border="1">
 <%

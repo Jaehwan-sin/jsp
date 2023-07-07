@@ -19,6 +19,7 @@
 	ResultSet rs = stmt.executeQuery(sql);
 	rs.next();
 %>
+<form action="jobEditProc.jsp" method="post">
 <table width="1000">
 	<tr><%=rs.getString("company") %></tr><br />
 	<tr><textarea name="title" id="title" cols="60" rows="3"><%=rs.getString("title") %></textarea></tr>
@@ -28,7 +29,9 @@
 		<td>근무조건</td>
 	</tr>
 	<tr>
-		<td>경력</td><td><%=rs.getString("career") %></td>
+		<td>경력</td><td><%=rs.getString("career") %>
+		<input type="text" class="inp" name="career" value="<%=rs.getString("career") %>" />
+		</td>
 		<td>급여</td><td><%=rs.getString("salary") %></td>
 	</tr>
 	<tr>
@@ -36,5 +39,10 @@
 		<td>지역</td><td><%=rs.getString("location") %></td>
 	</tr>
 </table>
+<hr />
+<input type="hidden" name="c" value="<%=rs.getString("no") %>" />
+<input type="submit" value="수정하기" />
+<a href="jobDetail.jsp?c=<%=rs.getString("no") %>">취소</a>
+</form>
 </body>
 </html>
