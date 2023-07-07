@@ -24,6 +24,7 @@ public class NoticeDelProcController implements Controller {
 //			response.sendRedirect("notice.jsp");
 //		} else
 //			out.write("삭제오류");
+//		out객체는 jsp객체에 종류인데 java에서 표현이 안 되서 주석처리
 
 	}
 }
