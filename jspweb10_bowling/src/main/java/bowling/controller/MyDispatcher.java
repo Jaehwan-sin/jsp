@@ -7,9 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import bowling.controller.board.bowlDelProcController;
 import bowling.controller.board.bowlDetailController;
 import bowling.controller.board.bowlEditController;
 import bowling.controller.board.bowlEditProcController;
+import bowling.controller.board.bowlRegController;
+import bowling.controller.board.bowlingDetailcontroller;
 import bowling.controller.board.bowlingRegProccontroller;
 
 public class MyDispatcher extends HttpServlet {// java단에서 jsp를 받으려면 httpservlet을 사용해야한다.
@@ -30,7 +33,7 @@ public class MyDispatcher extends HttpServlet {// java단에서 jsp를 받으려
 		
 		try {// 신호에 따라 생성되는 객체가 달라진다.
 			if (com.equals("/bowling/bowlDetail.do")) {
-				controller = new bowlDetailController(); // 객체생성
+				controller = new bowlingDetailcontroller(); // 객체생성
 			} else if (com.equals("/bowling/bowlEdit.do")) {
 				controller = new bowlEditController(); // 객체생성
 			} else if (com.equals("/bowling/bowlEditProc.do")) {

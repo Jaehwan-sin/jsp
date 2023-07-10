@@ -64,5 +64,8 @@
 			</tr>
 		</tbody>
 </table>
+<a href="bowlEdit.do?c=${b.bno}">수정하기</a>
+<a href="bowlDelProc.do?c=${b.bno}">삭제</a>
+<a href="bowlboard.jsp">목록</a>
 </body>
 </html>

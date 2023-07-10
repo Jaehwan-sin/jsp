@@ -7,11 +7,11 @@ import bowling.controller.Controller;
 import dao.BowlDao;
 import vo.Bowl;
 
-public class bowlDetailController implements Controller {
+public class bowlDelController implements Controller {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("bowlDetailController");
+		System.out.println("bowlDelController");
 		
 		String bno = request.getParameter("c");
 		BowlDao dao = new BowlDao();
