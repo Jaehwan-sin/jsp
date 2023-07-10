@@ -1,14 +1,10 @@
 package customer.controller.notice;
 
-import java.io.IOException;
-
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import customer.contoller.Controller;
 import customer.dao.NoticeDao;
-import customer.vo.Notice;
 
 public class NoticeDelProcController implements Controller {
 	@Override
