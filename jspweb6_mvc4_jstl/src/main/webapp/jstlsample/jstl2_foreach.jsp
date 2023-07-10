@@ -42,7 +42,7 @@
 
 <%-- <c:forEach var="i" begin="1" end="10" varStatus="st">
 	${i }
-	<c:if test="${not st.last }">,</c:if> <!-- 마지막 , 지우기 -->
+	<c:if test="${not st.last }">,</c:if> <!-- st의 마지막이 아니면 ,를 써라 -->
 </c:forEach> --%>
 
 <%-- <c:set value="0" var="n"/>
@@ -54,14 +54,20 @@
 </c:forEach>
 sum = ${n } --%>
 
-<c:set value="0" var="n" scope="application"/>
+<%-- <c:set value="0" var="n" scope="application"/>
 
 <c:forEach var="i" begin="1" end="10" varStatus="st">
 	${i }
 	<c:set value="${n+i }" var="n"></c:set>
 	<c:if test="${not st.last }">,</c:if>
 </c:forEach>
-sum = ${n }
+sum = ${n } --%>
+
+<c:set value="5" var="n" scope="page"></c:set>
+<c:set value="5" var="n2" scope="application"></c:set>
+sum=${n2 } <br />
+
+<a href="new.jsp" target="_blank">new.jsp</a>
 
 </body>
 </html>
