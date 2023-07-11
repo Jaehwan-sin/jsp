@@ -26,6 +26,18 @@
 </style>
 <body>
 <h2>NOTICE</h2>
+<c:if test="${empty sessionScope.uid }">
+	<a href="../login/login.do">login</a>
+</c:if>
+<c:if test="${not empty sessionScope.uid }">
+	<a href="../login/logoutproc.jsp">logout</a>
+</c:if>
+<a href="../login/login.do">LOGIN</a>
+
+<a href="">LOGOUT</a>
+<hr />
+
+
 <form action="notice.do" method="get">
 
 	<select name="f">

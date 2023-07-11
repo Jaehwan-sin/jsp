@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import customer.controller.member.LoginController;
+import customer.controller.member.LoginProcController;
+import customer.controller.member.LogoutProcController;
 import customer.controller.notice.NoticeController;
 import customer.controller.notice.NoticeDelProcController;
 import customer.controller.notice.NoticeDetailController;
@@ -46,6 +49,12 @@ public class MyDispatcher extends HttpServlet {// java단에서 jsp를 받으려
 				controller = new NoticeDelProcController(); // 객체생성
 			} else if (com.equals("/customer/notice.do")) {
 				controller = new NoticeController(); // 객체생성
+			} else if (com.equals("/login/login.do")) {
+				controller = new LoginController(); // 객체생성
+			} else if (com.equals("/login/loginproc.do")) {
+				controller = new LoginProcController(); // 객체생성
+			} else if (com.equals("/login/logoutproc.do")) {
+				controller = new LogoutProcController(); // 객체생성
 			}
 				controller.execute(request, response);// 신호에 따라 생긴 객체를 실행한다.
 		} catch (Exception e) {

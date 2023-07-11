@@ -7,7 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>index</h2>
-<a href="customer/notice.do"><h2>notice</h2></a>
+<h2>logoutproc</h2>
+<%
+//session 제거
+session.invalidate();
+response.sendRedirect("loginForm.jsp");
+%>
 </body>
 </html>
