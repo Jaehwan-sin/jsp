@@ -32,9 +32,7 @@
 <c:if test="${not empty sessionScope.uid }">
 	<a href="../login/logoutproc.jsp">logout</a>
 </c:if>
-<a href="../login/login.do">LOGIN</a>
 
-<a href="">LOGOUT</a>
 <hr />
 
 
