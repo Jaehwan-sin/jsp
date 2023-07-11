@@ -1,3 +1,4 @@
+<%@page import="java.sql.*"%>
 <%@page import="db.DBCon"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="vo.Bowl"%>
@@ -14,9 +15,7 @@
 <h2>bowlDetail</h2>
 <%
 	String bno = request.getParameter("c");
-	
-	Connection con = DBCon.getConnection();
-
+		
 	BowlDao dao = new BowlDao();
 	Bowl b = dao.getboard(bno);
 %>
@@ -64,8 +63,9 @@
 			</tr>
 		</tbody>
 </table>
-<a href="bowlEdit.do?c=${b.bno}">수정하기</a>
-<a href="bowlDelProc.do?c=${b.bno}">삭제</a>
+<hr />
+<a href="bowlEdit.do?c=<%=b.getBno() %>">수정하기</a>
+<a href="bowlDelProc.do?c=<%=b.getBno() %>">삭제</a>
 <a href="bowlboard.jsp">목록</a>
 </body>
 </html>

@@ -16,10 +16,12 @@ public class bowlingRegProccontroller implements Controller{
 		request.setCharacterEncoding("UTF-8");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
+		String writer = request.getParameter("writer");
 		
 		Bowl b = new Bowl();
 		b.setBtitle(title);
 		b.setBcontent(content); 
+		b.setBwriter(writer);
 		
 		BowlDao dao = new BowlDao();
 		dao.write(b);

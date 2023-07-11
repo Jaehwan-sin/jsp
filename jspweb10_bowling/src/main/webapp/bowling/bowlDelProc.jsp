@@ -13,6 +13,7 @@
 	String bno = request.getParameter("c");
 
 	BowlDao dao = new BowlDao();
+	int del = dao.delete(bno);
 %>
 </body>
 </html>

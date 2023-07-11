@@ -1,3 +1,5 @@
+<%@page import="vo.Bowl"%>
+<%@page import="dao.BowlDao"%>
 <%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -50,7 +52,7 @@
 			</tr>
 		</tbody>
 </table>
-<input type="hidden" name="c" value="${b.bno }" /> <!-- 아래 버튼으로 값을 전달할 수가 없어서 value와 name을 활용하여 보낸다. 화면에 안 보이게 type을 hidden으로  -->
+<input type="hidden" name="c" value="${b.bno }" />
 <input type="submit" value="수정하기" />
 <a href="bowlDetail.jsp?c=${b.bno }">취소</a>
 </form>

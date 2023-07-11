@@ -13,19 +13,15 @@ public class bowlingDetailcontroller implements Controller{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println("bowlDetailController");
 		
-		request.setCharacterEncoding("UTF-8");
-		String title = request.getParameter("title");
-		String content = request.getParameter("content");
+		String bno = request.getParameter("c");
+		String hit = request.getParameter("h");
+		System.out.println("hit : "+hit);
 		
-		Bowl b = new Bowl();
-		b.setBtitle(title);
-		b.setBcontent(content); 
+		BowlDao dao = new BowlDao(); 
+		Bowl b = dao.getNotice(bno,hit);
 		
-		BowlDao dao = new BowlDao();
-		dao.write(b);
-		
-		response.sendRedirect("bowlboard.jsp");
-		
+		request.setAttribute("b", b);
+		request.getRequestDispatcher("bowlDetail.jsp").forward(request, response);
 	}
 	
 }

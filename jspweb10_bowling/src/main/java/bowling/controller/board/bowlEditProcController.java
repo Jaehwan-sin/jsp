@@ -15,20 +15,19 @@ public class bowlEditProcController implements Controller {
 		
 		request.setCharacterEncoding("utf-8");
 		String bno = request.getParameter("c");
-		String title = request.getParameter("btitle");
-		String content = request.getParameter("bcontent");
+		String btitle = request.getParameter("btitle");
+		String bcontent = request.getParameter("bcontent");
 		
 		Bowl b = new Bowl();
-		b.setBtitle(title);
-		b.setBcontent(content);
+		b.setBtitle(btitle);
+		b.setBcontent(bcontent);
 		b.setBno(bno);
 		
 		BowlDao dao = new BowlDao();
-		dao.update(title,content,bno);
+		dao.update(btitle,bcontent,bno);
 		
 		request.setAttribute("b", b);
 		request.getRequestDispatcher("bowlDetail.jsp").forward(request, response);
 		
 	}
-
 }

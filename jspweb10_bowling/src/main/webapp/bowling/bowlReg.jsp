@@ -12,7 +12,7 @@
 <form action="bowlRegProc.do" method="post">
 
 	제목 : <input type="text" name="title" /> <br />
-	첨부파일 : <input type="file" name="txtFile" /> <br />
+	작성자 : <input type="text" name="writer" /> <br />
 	내용 : 
 	<textarea name="content" id="txtcontent" class="txtcontent" cols="40" rows="20">내용을 입력하세요.</textarea> <br />
 	<input type="submit" value="save" />
