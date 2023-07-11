@@ -69,7 +69,7 @@ public class NoticeDao {
 	
 	public Notice getNotice(String seq) throws Exception {
 		String sql = "select seq,title,writer,content,regdate,hit from notices where seq="+seq;
-		
+	
 		// DB연결 
 		Connection con = DBCon.getConnection();
 		// 실행 
