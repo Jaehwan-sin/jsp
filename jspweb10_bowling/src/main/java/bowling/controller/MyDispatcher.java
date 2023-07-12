@@ -12,7 +12,7 @@ import bowling.controller.board.bowlDelProcController;
 import bowling.controller.board.bowlEditController;
 import bowling.controller.board.bowlEditProcController;
 import bowling.controller.board.bowlRegController;
-import bowling.controller.board.bowlingDetailcontroller;
+import bowling.controller.board.bowlDetailcontroller;
 import bowling.controller.board.bowlingRegProccontroller;
 import bowling.controller.member.loginController;
 import bowling.controller.member.loginProcController;
@@ -33,8 +33,8 @@ public class MyDispatcher extends HttpServlet {// java단에서 jsp를 받으려
 		Controller controller = null;
 		
 		try {// 신호에 따라 생성되는 객체가 달라진다.
-			if (com.equals("/bowling/bowlDetail.do")) {
-				controller = new bowlingDetailcontroller();
+			if (com.equals("/bowling/bowldetail.do")) {
+				controller = new bowlDetailcontroller();
 			} else if (com.equals("/bowling/bowlEdit.do")) {
 				controller = new bowlEditController(); 
 			} else if (com.equals("/bowling/bowlEditProc.do")) {

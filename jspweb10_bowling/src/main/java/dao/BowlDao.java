@@ -85,7 +85,7 @@ public class BowlDao {
 	public List<Bowl> bowlselAll(String field, String query) throws Exception {
 		
 		// String sql = "select bno,btitle,bcontent,bwriter,bdate,bcnt from bowlboard order by to_number(bno) desc";
-		String sql = "select bno,btitle,bcontent,bwriter,bdate,bcnt from bowlboard where "+field+" like ? order by to_number(bno) desc";
+		String sql = "select bno,btitle,bcontent,bwriter,bdate,bcnt from bowlboard order by to_number(bno) desc";
 		
 		Connection con = DBCon.getConnection();
 		
@@ -109,12 +109,13 @@ public class BowlDao {
 	}
 
 
-	public Bowl getNotice(String bno, String hit) throws Exception {
+	public Bowl getNotice(String bno) throws Exception {
 		
 		String sql = "select bno,btitle,bcontent,bwriter,bdate,bcnt from bowlboard where bno="+bno;
 		
-		int hnum = Integer.parseInt(hit);
-		hitupdate(bno,hnum);
+		/*
+		 * int hnum = Integer.parseInt(hit); hitupdate(bno,hnum);
+		 */
 		
 		Connection con = DBCon.getConnection();
 		

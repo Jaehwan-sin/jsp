@@ -1,4 +1,4 @@
-package vo;
+package customer.vo;
 
 import java.util.Date;
 
@@ -75,6 +75,5 @@ public class Member {
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
-	
 	
 }

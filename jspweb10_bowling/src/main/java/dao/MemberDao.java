@@ -1,6 +1,6 @@
 package dao;
 
-import java.sql.*;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -24,11 +24,6 @@ public class MemberDao {
 		m.setPwd(rs.getString("pwd"));
 		System.out.println("id : "+m.getId());
 		System.out.println("pwd : "+m.getPwd());
-	}
-	
-	public Member getMember(String uid) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 	
 	return m;

@@ -1,3 +1,5 @@
+<%@page import="vo.Bowl"%>
+<%@page import="dao.BowlDao"%>
 <%@page import="db.DBCon"%>
 <%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -31,6 +33,18 @@
 </style>
 <body>
 <h2>bowlboard</h2>
+<%
+	String sql = "select bno,btitle,bcontent,bwriter,bdate,bcnt from bowlboard order by to_number(bno) desc";
+
+	Connection con = DBCon.getConnection();
+	
+	Statement stmt = con.createStatement();
+	ResultSet rs = stmt.executeQuery(sql);
+
+	BowlDao dao = new BowlDao();
+	Bowl b = new Bowl();
+
+%> 
 <c:if test="${empty sessionScope.uid }">
 	<a href="../login/login.do">LOGIN</a>
 </c:if>
@@ -58,7 +72,7 @@
 		<td>조회</td>
 	</tr>
 
-<c:forEach items="${list }" var="b">
+<%-- <c:forEach items="${list }" var="b">
 	<tr>
 		<td>${b.bno }</td>
 		<td><a href="bowlDetail.do?c=${b.bno }&h=${b.bcnt}"></a>${b.btitle }</td>
@@ -66,8 +80,21 @@
 		<td>${b.bdate }</td>
 		<td>${b.bcnt }</td>
 	</tr>
-</c:forEach>
+</c:forEach> --%>
 
+<%
+	while(rs.next()) {
+%>
+	<tr>
+		<td><%=rs.getString("bno") %></td>
+		<td><a href="bowldetail.do?c=<%=rs.getString("bno") %>"><%=rs.getString("btitle") %></a></td>
+		<td><%=rs.getString("bwriter") %></td>
+		<td><%=rs.getDate("bdate") %></td>
+		<td><%=rs.getString("bcnt") %></td>
+	</tr>
+<%
+	}
+%>
 </table>
 <hr />
 <a href="bowlReg.do"><h3>글 등록하기</h3></a>
