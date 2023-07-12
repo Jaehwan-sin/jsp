@@ -28,10 +28,12 @@ public class NoticeRegProcController implements Controller {
 		String title = req.getParameter("title");
 		String content = req.getParameter("content");
 		String file = req.getFilesystemName("file");
+		String uid = req.getParameter("uid"); /* uid를 받는다 */
 		
 		System.out.println(title+":"+file);
 		
 		Notice n = new Notice();
+		n.setWriter(uid); /* writer에 uid를 저장한다. */
 		n.setTitle(title);
 		n.setContent(content);
 		n.setFilesrc(file);

@@ -46,6 +46,7 @@
 			</tr>
 		</tbody>
 </table>
+	<input type="hidden" name="uid" value="${uid }" /> <!-- 로그인 된 아이디 정보를 가져가기 위한 과정 -->
 	<input type="submit" value="SAVE" />
 	<input type="button" value="CANCEL" class="cancel" onclick="cancelurl()"/>
 

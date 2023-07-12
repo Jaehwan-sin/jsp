@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import customer.controller.member.LoginController;
 import customer.controller.member.LoginProcController;
 import customer.controller.member.LogoutProcController;
+import customer.controller.notice.DownloadController;
 import customer.controller.notice.NoticeController;
 import customer.controller.notice.NoticeDelProcController;
 import customer.controller.notice.NoticeDetailController;
@@ -55,6 +56,8 @@ public class MyDispatcher extends HttpServlet {// java단에서 jsp를 받으려
 				controller = new LoginProcController(); // 객체생성
 			} else if (com.equals("/login/logoutproc.do")) {
 				controller = new LogoutProcController(); // 객체생성
+			} else if (com.equals("/customer/download.do")) {
+				controller = new DownloadController(); // 객체생성
 			}
 				controller.execute(request, response);// 신호에 따라 생긴 객체를 실행한다.
 		} catch (Exception e) {

@@ -26,10 +26,11 @@
 </style>
 <body>
 <h2>NOTICE</h2>
-<c:if test="${empty sessionScope.uid }">
-	<a href="../login/login.do">login</a>
+<c:if test="${empty sessionScope.uid }"> <!-- 로그인 진행 전 상태 -->
+	<a href="../login/login.do">login</a>  |
+	<a href="#">Join</a>
 </c:if>
-<c:if test="${not empty sessionScope.uid }">
+<c:if test="${not empty sessionScope.uid }"> <!-- 로그인이 된 상태 -->
 	<a href="../login/logoutproc.jsp">logout</a>
 </c:if>
 
@@ -73,7 +74,10 @@
 	
 </table>
 <hr />
-<a href="noticeReg.do">글쓰기</a>
+
+<c:if test="${not empty sessionScope.uid }"> <!-- 로그인이 된 상태 -->
+	<a href="noticeReg.do">글쓰기</a>
+</c:if>
 
 </body>
 </html>

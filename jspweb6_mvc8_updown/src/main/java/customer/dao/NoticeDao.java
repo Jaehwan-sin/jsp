@@ -15,15 +15,16 @@ public class NoticeDao {
 	
 	public void write(Notice n) throws Exception {
 		//insert 작업 
-		String sql = "insert into notices values("+"(select max(to_number(seq))+1 from notices)"+",?,'CJ',?,sysdate,0,?)";
+		String sql = "insert into notices values("+"(select max(to_number(seq))+1 from notices)"+",?,?,?,sysdate,0,?)";
 		// seq가 1씩 증가해야해서 서브쿼리문으로 max값에서 +1된 값이 들어가도록한다.
 		// DB연결 
 		Connection con = DBCon.getConnection();
 		// 실행 
 		PreparedStatement pstmt = con.prepareStatement(sql);
 		pstmt.setString(1, n.getTitle());
-		pstmt.setString(2, n.getContent());
-		pstmt.setString(3, n.getFilesrc());
+		pstmt.setString(2, n.getWriter()); /* writer자리에 uid를 넣는다. */
+		pstmt.setString(3, n.getContent());
+		pstmt.setString(4, n.getFilesrc());
 		pstmt.executeUpdate(); 
 		
 		pstmt.close();
@@ -87,6 +88,7 @@ public class NoticeDao {
 		n.setRegdate(rs.getDate("regdate"));
 		n.setHit(rs.getInt("hit"));
 		
+		
 		rs.close();
 		stmt.close();
 		con.close();
@@ -95,7 +97,7 @@ public class NoticeDao {
 	}
 	
 	public Notice getNotice(String seq, String hit) throws Exception {
-		String sql = "select seq,title,writer,content,regdate,hit from notices where seq="+seq;
+		String sql = "select seq,title,writer,content,regdate,hit,filesrc from notices where seq="+seq;
 		// String sql = "update notices set hit=hit+1 where seq='1'";
 		int hnum = Integer.parseInt(hit);
 		hitupdate(seq,hnum);
@@ -114,6 +116,7 @@ public class NoticeDao {
 		n.setContent(rs.getString("content"));
 		n.setRegdate(rs.getDate("regdate"));
 		n.setHit(rs.getInt("hit"));
+		n.setFilesrc(rs.getString("filesrc"));
 		
 		rs.close();
 		stmt.close();

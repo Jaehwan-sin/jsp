@@ -50,7 +50,10 @@
 			</tr>
 			<tr>
 				<th class="left">첨부</th>
-				<td colspan="3">첨부</td>
+				<td colspan="3" id="addfile">
+				<!-- 파일이름 -->
+					<a href="download.do?p=customer/upload/&f=${n.filesrc}">${n.filesrc}</a>
+				</td>
 			</tr>
 		</tbody>
 </table>
