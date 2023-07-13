@@ -23,7 +23,7 @@
 	rs.next(); */
 	JHNotice j = (JHNotice)request.getAttribute("j");
 %>
-<form action="jhnoticeEditProc.jsp" method="post">
+<form action="jhnoticeEditProc.do" method="post">
 <table>
 	<tr>
 		<th id="title">

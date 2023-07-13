@@ -14,33 +14,26 @@
 <body>
 <h2>jhnoticeDetail</h2>
 <%
-	String jhno = request.getParameter("jhno");
-/* 	String sql = "select jhno,jhtitle,jhwriter,jhcontent,jhdate,jhhit from jhetcseoul where jhno="+jhno;
-	
-	Connection con = DBCon.getConnection();
-
-	Statement stmt = con.createStatement();
-	ResultSet rs = stmt.executeQuery(sql);
-	rs.next(); */
-/* 	JHNoticeDao dao = new JHNoticeDao();
-	JHNotice j = dao.getNotice(jhno); */
-	
-	JHNotice j = (JHNotice)request.getAttribute("j");
+    String jhno = request.getParameter("c");
+    JHNoticeDao dao = new JHNoticeDao();
+    JHNotice j = dao.getNotice(jhno);
 %>
 <form action="JHEditProcController.jsp">
 <table>
-	<tr>
-		<th id="title"><h3><%=j.getJhtitle() %></h3></th>
-	</tr>
-	<tr id="etc">
-	<td><%=j.getJhdate() %>  |</td>  
-	<td><%=j.getJhwriter() %>  |</td>
-	<td><%=j.getJhhit() %>  </td>
-	</tr>
-	<td id="line"><%=j.getJhcontent() %>  </td>	
+    <tr>
+        <th id="title"><h3><%=j.getJhtitle() %></h3></th>
+    </tr>
+    <tr id="etc">
+        <td><%=j.getJhdate() %>  |</td>  
+        <td><%=j.getJhwriter() %>  |</td>
+        <td><%=j.getJhhit() %>  </td>
+    </tr>
+    <tr>
+        <td id="line" colspan="3"><%=j.getJhcontent() %>  </td> 
+    </tr>
 </table>
-	<hr />
-<input type="button" value="목록" onclick = "location.href = 'jhnotice.jsp'" id="list" />
+    <hr />
+<input type="button" value="목록" onclick="location.href='jhnotice.jsp'" id="list" />
 <a href="jhnoticeEdit.do?c=<%=j.getJhno() %>">수정</a>
 <a href="jhnoticeDelProc.do?c=<%=j.getJhno() %>">삭제</a>
 </form>

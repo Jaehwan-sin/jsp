@@ -33,12 +33,13 @@ public class JHNoticeDao {
 	
 	public JHNotice getNotice(String jhno) throws Exception {
 		
-		String sql = "select jhno,jhtitle,jhwriter,jhcontent,jhdate,jhhit from jhetcseoul where jhno="+jhno;
+		String sql = "select jhno,jhtitle,jhwriter,jhcontent,jhdate,jhhit from jhetcseoul where jhno=?";
 		
 		Connection con = DBCon.getConnection();
 
-		Statement stmt = con.createStatement();
-		ResultSet rs = stmt.executeQuery(sql);
+		PreparedStatement pstmt = con.prepareStatement(sql);
+	    pstmt.setString(1, jhno);
+		ResultSet rs = pstmt.executeQuery();
 		rs.next();
 
 		JHNotice j = new JHNotice();
@@ -50,7 +51,7 @@ public class JHNoticeDao {
 		j.setJhhit(rs.getInt("jhhit"));
 		
 		rs.close();
-		stmt.close();
+		pstmt.close();
 		con.close();
 		
 		return j;

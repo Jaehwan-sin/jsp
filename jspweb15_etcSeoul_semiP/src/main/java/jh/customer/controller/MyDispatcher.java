@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import jh.customer.notice.JHEditController;
+import jh.customer.notice.JHEditProcController;
 import jh.customer.notice.JHNoticeController;
 import jh.customer.notice.JHNoticeDetailController;
 
@@ -27,6 +28,8 @@ public class MyDispatcher extends HttpServlet {
 				controller = new JHNoticeDetailController();
 			} else if (com.equals("/customer/jhnoticeEdit.do")) {
 				controller = new JHEditController();
+			} else if (com.equals("/customer/jhnoticeEditProc.do")) {
+				controller = new JHEditProcController();
 			}
 				controller.execute(request, response);
 		} catch (Exception e) {
