@@ -1,0 +1,34 @@
+table{
+	border-collapse : collapse;
+	/* border : 1px solid black; */
+	width : 100%;
+	height : 80px;
+}
+#notice{
+	text-align : center;
+	font-size : 25px;
+}
+#etc{
+	float : left;
+}
+#title{
+	text-align : left;
+	font-size : 20px;
+}
+#search{
+	text-align : center;
+}
+#searchbtn{
+	background-color: black;
+	color : white;
+}
+#q{
+	size : 20;
+}
+td{
+	padding : 10px 5px 10px 5px;
+}
+#writebtn{
+	background-color: black;
+	color : white;
+}

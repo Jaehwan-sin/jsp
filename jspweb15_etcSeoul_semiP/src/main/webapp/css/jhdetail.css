@@ -1,0 +1,20 @@
+#etc{
+	/* text-align : left;
+	float : left; */
+}
+#line{
+	/* border-top: 1px solid #dee2e6; */
+	border-top: 1px solid black;
+	width : 100%;
+	text-align : center;
+}
+#list{
+	background-color: black;
+	color : white;
+}
+#jhcontent{
+	width : 100%;
+}
+#title{
+	width : 80%;
+}
