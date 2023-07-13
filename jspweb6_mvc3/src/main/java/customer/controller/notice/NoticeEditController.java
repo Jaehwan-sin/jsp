@@ -1,8 +1,5 @@
 package customer.controller.notice;
 
-import java.io.IOException;
-
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,6 +8,7 @@ import customer.dao.NoticeDao;
 import customer.vo.Notice;
 
 public class NoticeEditController implements Controller {
+	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println("NoticeEditController");

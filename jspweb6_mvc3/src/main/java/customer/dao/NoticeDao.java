@@ -27,19 +27,6 @@ public class NoticeDao {
 		con.close(); 
 	}
 	
-	public void update(Notice notice) throws Exception {
-		String sql = "update notices "+"set title=?,content=? where seq=?";
-		// "update notices "+"set title=?,content=? where seq=?"; 이렇게도 가능 
-		// DB연결 
-		Connection con = DBCon.getConnection();
-		// 실행 
-		PreparedStatement pstmt = con.prepareStatement(sql);
-		pstmt.setString(1, notice.getTitle());
-		pstmt.setString(2, notice.getContent());
-		pstmt.setString(3, notice.getSeq());
-		pstmt.executeUpdate(); 
-	}
-	
 	public void update2(String seq, String tit, String content) throws Exception {
 		String sql = "update notices "+"set title=?,content=? where seq=?";
 		// "update notices "+"set title=?,content=? where seq=?"; 이렇게도 가능 
