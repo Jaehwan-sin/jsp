@@ -8,7 +8,7 @@
 </head>
 <body>
 <h2>jhnoticeRegProc</h2>
-<form action="jhnoticeRegProc.jsp" method="post">
+<form action="jhnoticeRegProc.do" method="post" enctype="multipart/form-data">
 <table>
 	<tr>
 		<th id="title">
@@ -17,14 +17,15 @@
 	</tr>
 	<tr id="etc">
 	<td>
-		작성자 : <input type="text" name="jhwriter" /> <br />
+		첨부파일 : <input type="file" name="jhfile" /> <br />
 		내용 : 
 		<textarea name="jhcontent" id="content" cols="30" rows="10"></textarea>
 	</td>  
 	</tr>	
 </table>
-	<input type="submit" value="save" />
-	<input type="button" value="cancel" onclick = "location.href = 'jhnotice.jsp'" />
+	<input type="hidden" name="jhuid" value="${jhuid }" />
+	<input type="submit" value="save" onclick = "location.href = 'jhnotice.do'"/>
+	<input type="button" value="cancel" onclick = "location.href = 'jhnotice.do'" />
 
 </form>
 </body>

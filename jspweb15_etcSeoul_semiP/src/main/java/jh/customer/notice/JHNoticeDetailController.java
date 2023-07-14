@@ -14,9 +14,11 @@ public class JHNoticeDetailController implements Controller {
 		System.out.println("JHNoticeDetailController");
 		
 		String jhno = request.getParameter("c");
+		String jhhit = request.getParameter("h");
+		System.out.println("jhhit : "+jhhit);
 		
 		JHNoticeDao dao = new JHNoticeDao();
-		JHNotice j = dao.getNotice(jhno);
+		JHNotice j = dao.getNotice(jhno,jhhit);
 		
 		request.setAttribute("j", j);
 		request.getRequestDispatcher("jhnoticeDetail.jsp").forward(request, response);

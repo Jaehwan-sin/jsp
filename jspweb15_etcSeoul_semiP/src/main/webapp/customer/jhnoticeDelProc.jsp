@@ -11,13 +11,6 @@
 </head>
 <body>
 <h2>jhnoticeDelProc</h2>
-<%
-	String jhno = request.getParameter("c");
-	
-	JHNoticeDao dao = new JHNoticeDao();
-	dao.delete(jhno);
-	
-	response.sendRedirect("jhnotice.jsp");
-%>
+
 </body>
 </html>

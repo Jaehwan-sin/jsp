@@ -9,33 +9,32 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../css/jhdetail.css" />
+<!-- <link rel="stylesheet" href="../css/jhdetail.css" /> -->
 </head>
 <body>
 <h2>jhnoticeDetail</h2>
-<%
-    String jhno = request.getParameter("c");
-    JHNoticeDao dao = new JHNoticeDao();
-    JHNotice j = dao.getNotice(jhno);
-%>
-<form action="JHEditProcController.jsp">
+
 <table>
     <tr>
-        <th id="title"><h3><%=j.getJhtitle() %></h3></th>
+        <th id="title"><h3>${j.jhtitle }</h3></th>
     </tr>
     <tr id="etc">
-        <td><%=j.getJhdate() %>  |</td>  
-        <td><%=j.getJhwriter() %>  |</td>
-        <td><%=j.getJhhit() %>  </td>
+        <td>${j.jhdate}  |</td>  
+        <td>${j.jhwriter }  |</td>
+        <td>${j.jhhit }  |</td> 
+        <td>${j.jhfile }  </td>  
     </tr>
     <tr>
-        <td id="line" colspan="3"><%=j.getJhcontent() %>  </td> 
+    	<td>
+        	<a href="download.do?p=customer/jhupload/&f=${j.jhfile }">${j.jhfile }</a>
+        </td>
+        <td id="line" colspan="3">${j.jhcontent }  </td> 
     </tr>
 </table>
     <hr />
-<input type="button" value="목록" onclick="location.href='jhnotice.jsp'" id="list" />
-<a href="jhnoticeEdit.do?c=<%=j.getJhno() %>">수정</a>
-<a href="jhnoticeDelProc.do?c=<%=j.getJhno() %>">삭제</a>
-</form>
+<input type="button" value="목록" onclick="location.href='jhnotice.do'" id="list" />
+<input type="button" value="수정" onclick="location.href='jhnoticeEdit.do?c=${j.jhno }'" id="list" />
+<input type="button" value="삭제" onclick="location.href='jhnoticeDelProc.do?c=${j.jhno }'" id="list" />
+
 </body>
 </html>

@@ -10,7 +10,14 @@ public class JHNotice {
 	private String jhcontent;
 	private Date jhdate;
 	private int jhhit;
+	private String jhfile;
 	
+	public String getJhfile() {
+		return jhfile;
+	}
+	public void setJhfile(String jhfile) {
+		this.jhfile = jhfile;
+	}
 	public String getJhno() {
 		return jhno;
 	}

@@ -8,5 +8,6 @@
 </head>
 <body>
 <h2>index</h2>
+<a href="customer/jhnotice.do">notice.do</a>
 </body>
 </html>

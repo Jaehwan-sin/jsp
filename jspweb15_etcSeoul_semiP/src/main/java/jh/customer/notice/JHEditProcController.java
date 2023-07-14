@@ -18,10 +18,10 @@ public class JHEditProcController implements Controller {
 		String jhtitle = request.getParameter("jhtitle");
 		String jhcontent = request.getParameter("jhcontent");
 		  
-		JHNotice n = new JHNotice(); 
-		n.setJhtitle(jhtitle); 
-		n.setJhcontent(jhcontent);
-		n.setJhno(jhno);
+		JHNotice j = new JHNotice(); 
+		j.setJhtitle(jhtitle); 
+		j.setJhcontent(jhcontent);
+		j.setJhno(jhno);
 		
 		JHNoticeDao dao = new JHNoticeDao(); 
 		dao.edit(jhno,jhtitle,jhcontent);
