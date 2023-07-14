@@ -38,6 +38,7 @@ public class NoticeRegProcController implements Controller {
 		n.setContent(content);
 		n.setFilesrc(file);
 		
+		
 		NoticeDao dao = new NoticeDao();
 		dao.write(n);
 		
