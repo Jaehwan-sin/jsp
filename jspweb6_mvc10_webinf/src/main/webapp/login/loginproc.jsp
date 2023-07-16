@@ -1,3 +1,4 @@
+<%@page import="customer.db.DBCon"%>
 <%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -15,11 +16,7 @@
 	String pass = request.getParameter("password");
 	String sql = "select pwd from member where id=?";
 	/* DB 연결 */	
-	Class.forName("oracle.jdbc.driver.OracleDriver");
-	String url="jdbc:oracle:thin:@localhost:1521:xe";
-	String user="hr";
-	String pw="123456";
-	Connection con=DriverManager.getConnection(url,user,pw);
+	Connection con = DBCon.getConnection();
 	// 실행
 	PreparedStatement pstmt = con.prepareStatement(sql);
 	pstmt.setString(1, id);

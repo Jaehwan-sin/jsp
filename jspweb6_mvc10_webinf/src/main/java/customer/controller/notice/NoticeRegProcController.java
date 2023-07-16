@@ -32,6 +32,7 @@ public class NoticeRegProcController implements Controller {
 		String uid = req.getParameter("uid"); /* uid를 받는다 */
 		
 		System.out.println(title+":"+file);
+		System.out.println("uid : "+uid);
 		
 		Notice n = new Notice();
 		n.setWriter(uid); /* writer에 uid를 저장한다. */
