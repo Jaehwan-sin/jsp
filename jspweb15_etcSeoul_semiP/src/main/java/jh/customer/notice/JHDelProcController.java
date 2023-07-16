@@ -18,7 +18,7 @@ public class JHDelProcController implements Controller {
 		JHNoticeDao dao = new JHNoticeDao();
 		dao.delete(jhno);
 		
-		response.sendRedirect("jhnotice.jsp");
+		response.sendRedirect("/src/main/webapp/WEB-INF/View/customer/jhnotice.jsp");
 	
 	}
 

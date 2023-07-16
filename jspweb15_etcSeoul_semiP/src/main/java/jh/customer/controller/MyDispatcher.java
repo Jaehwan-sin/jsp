@@ -8,6 +8,7 @@ import jh.customer.controller.member.JHLoginController;
 import jh.customer.controller.member.JHLoginProcController;
 import jh.customer.controller.member.JHLogoutProcController;
 import jh.customer.notice.JHDelProcController;
+import jh.customer.notice.JHDownloadController;
 import jh.customer.notice.JHEditController;
 import jh.customer.notice.JHEditProcController;
 import jh.customer.notice.JHNoticeController;
@@ -52,7 +53,9 @@ public class MyDispatcher extends HttpServlet {
 				controller = new JHLogoutProcController();
 			} else if (com.equals("/joinus/join.do")) {
 				controller = new JHLoginProcController();
-			} 
+			} else if (com.equals("/customer/download.do")) {
+				controller = new JHDownloadController();
+			}
 				controller.execute(request, response);
 		} catch (Exception e) {
 			// TODO: handle exception

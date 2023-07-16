@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../css/jhjoinForm_style.css" />
 </head>
 <body>
 <p style="color:red;">
@@ -21,7 +22,7 @@ if(request.getAttribute("errors")!=null) {
 %>
 </p>
 <h2>join</h2>
-<form action="joinproc.jsp">
+<form action="jhjoinProc.jsp">
 	<label for="id">아이디</label>
 		<input type="text" name="id" />
 		<input type="button" value="중복확인" />

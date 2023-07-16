@@ -1,20 +1,33 @@
 #etc{
-	/* text-align : left;
-	float : left; */
+	text-align : left;
+	float : left;
+	font-size : 15px;
+	color : grey;
 }
-#line{
-	/* border-top: 1px solid #dee2e6; */
-	border-top: 1px solid black;
-	width : 100%;
-	text-align : center;
-}
-#list{
-	background-color: black;
-	color : white;
+#list{	
+	color : black;
+	text-align : left;
 }
 #jhcontent{
 	width : 100%;
+	text-align : center;
 }
-#title{
-	width : 80%;
+body {
+  font-family: Arial, sans-serif;
+  text-align: center; /* 내용을 가운데 정렬 */
+  color: black;
+  width : 90%;
+  margin : 0 auto;
+}
+thead tr th {
+	text-align: center !important;
+}
+input[type="button"] {
+  background-color: black !important;
+  color: white !important;
+  padding: 5px 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 3px;
 }

@@ -18,7 +18,7 @@ public class JHEditController implements Controller {
 		JHNotice j = dao.getNotice(jhno);
 		
 		request.setAttribute("j", j);
-		request.getRequestDispatcher("jhnoticeEdit.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/View/customer/jhnoticeEdit.jsp").forward(request, response);
 	}
 
 }

@@ -1,26 +1,36 @@
 table{
 	border-collapse : collapse;
 	/* border : 1px solid black; */
-	width : 100%;
+	width : 90%;
 	height : 80px;
+	margin : auto;
+}
+body {
+	font-family: "Arial", sans-serif;
 }
 #notice{
 	text-align : center;
-	font-size : 25px;
+	font-size : 20px;
 }
-#etc{
+#etc td{
+	text-align : left;
 	float : left;
+	font-size : 15px;
+	color : grey;
 }
 #title{
 	text-align : left;
 	font-size : 20px;
+	color : black;
 }
 #search{
 	text-align : center;
 }
-#searchbtn{
-	background-color: black;
-	color : white;
+#title a {
+  color: black;
+}
+#title a:hover {
+  /* 아무런 스타일 변화가 없음 */
 }
 #q{
 	size : 20;
@@ -31,4 +41,14 @@ td{
 #writebtn{
 	background-color: black;
 	color : white;
+}
+#searchbtn{
+	background-color: black;
+	color : white;
+}
+.btn-log{
+	display : inline-block;	
+}
+hr{
+	width : 90%;
 }

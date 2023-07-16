@@ -76,7 +76,7 @@ public class JHNoticeDao {
 	
 	public JHNotice getNotice(String jhno, String jhhit) throws Exception {
 		
-		String sql = "select jhno,jhtitle,jhwriter,jhcontent,jhdate,jhhit from jhetcseoul where jhno="+jhno;
+		String sql = "select jhno,jhtitle,jhwriter,jhcontent,jhdate,jhhit,jhfile from jhetcseoul where jhno="+jhno;
 		
 		int jhnum = Integer.parseInt(jhhit);
 		jhhitupdate(jhno,jhnum);
@@ -94,6 +94,7 @@ public class JHNoticeDao {
 		j.setJhcontent(rs.getString("jhcontent"));
 		j.setJhdate(rs.getDate("jhdate"));
 		j.setJhhit(rs.getInt("jhhit"));
+		j.setJhfile(rs.getString("jhfile"));
 		
 		rs.close();
 		stmt.close();

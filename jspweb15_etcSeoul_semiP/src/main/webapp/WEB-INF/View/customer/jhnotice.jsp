@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,19 +14,31 @@
 		var inputVal = document.getElementById("q")
 		inputVal.value="";
 	}
+	
+	function openjoinpopup() {
+		var popupWidth = 600;
+		var popupHeight = 500;
+		var left = (window.innerWidth - popupWidth) / 2;
+		var top = (window.innerHeight - popupHeight) / 2;
+		var popupFeatures = 'width=' + popupWidth + ', height=' + popupHeight + ', top=' + top + ', left=' + left;
+		window.open('../joinus/jhjoin.jsp', '_blank', popupFeatures);
+	}
 </script>
 <link rel="stylesheet" href="../css/jhstyle.css" />
 </head>
 <body>
 <h2>jhnotice</h2>
 <c:if test="${empty sessionScope.jhid }">
-	<input type="button" value="LOGIN" onclick="location.href = '../login/login.do'" id="writebtn"/>
-	<input type="button" value="JOIN" onclick = "location.href = '../joinus/jhjoin.jsp'" id="writebtn" />	
+	<div class="btn-log">
+		<input type="button" value="LOGIN" onclick="location.href = '../login/login.do'" id="writebtn"/>
+		<input type="button" value="JOIN" onclick = "openjoinpopup()" id="writebtn" />
+	</div>		
 </c:if>
 <c:if test="${not empty sessionScope.jhid }">
-	<!-- <a href="../login/jhlogoutproc.do">LOGOUT</a> -->
-	<input type="button" value="LOGOUT" onclick="location.href = '../login/jhlogoutproc.do'" id="writebtn"/>
-	<input type="button" value="글쓰기" onclick = "location.href = 'jhnoticeReg.do'" id="writebtn" />
+	<div class="btn-log">
+		<input type="button" value="LOGOUT" onclick="location.href = '../login/jhlogoutproc.do'" id="writebtn"/>
+		<input type="button" value="글쓰기" onclick = "location.href = 'jhnoticeReg.do'" id="writebtn" />
+	</div>
 </c:if>
 <h3 id="notice">공지사항</h3> 
 
@@ -34,16 +47,17 @@
 <c:forEach items="${list }" var="j">
 
 	<tr>
-		<th>
-			<a href="jhnoticedetail.do?c=${j.jhno }&h=${j.jhhit }">${j.jhtitle}</a>
+		<th id="title">
+			<a href="jhnoticedetail.do?c=${j.jhno }&h=${j.jhhit }" style="color: black; text-decoration: none;">${j.jhtitle}</a>
+
 		</th>	
 	</tr>
 	<tr id="etc">
-		<td>${j.jhdate }</td>
-		<td>${j.jhwriter }</td>
+		<td>${j.jhdate }  |</td>
+		<td>${j.jhwriter }  |</td>
 		<td>${j.jhhit }</td>
 	</tr>
-
+	
 </c:forEach>
 
 </table>

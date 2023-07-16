@@ -32,7 +32,7 @@ public class JHNoticeController implements Controller {
 		
 		request.setAttribute("list", list);
 		request.setAttribute("query", query);
-		request.getRequestDispatcher("jhnotice.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/View/customer/jhnotice.jsp").forward(request, response);
 		// response.sendRedirect("jhnotice.jsp");
 	}
 

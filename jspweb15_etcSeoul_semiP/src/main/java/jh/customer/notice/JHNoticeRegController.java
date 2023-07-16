@@ -11,7 +11,7 @@ public class JHNoticeRegController implements Controller {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println("JHNoticeRegController");
 		
-		request.getRequestDispatcher("jhnoticeReg.jsp").forward(request,response);
+		request.getRequestDispatcher("/WEB-INF/View/customer/jhnoticeReg.jsp").forward(request,response);
 		
 	}
 

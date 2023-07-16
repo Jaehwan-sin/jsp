@@ -23,7 +23,7 @@
 	</td>  
 	</tr>	
 </table>
-	<input type="hidden" name="jhuid" value="${jhuid }" />
+	<input type="hidden" name="jhid" value="${jhid }" />
 	<input type="submit" value="save" onclick = "location.href = 'jhnotice.do'"/>
 	<input type="button" value="cancel" onclick = "location.href = 'jhnotice.do'" />
 

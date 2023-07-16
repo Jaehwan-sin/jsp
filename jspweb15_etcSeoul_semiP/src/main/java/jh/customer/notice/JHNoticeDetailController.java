@@ -21,7 +21,7 @@ public class JHNoticeDetailController implements Controller {
 		JHNotice j = dao.getNotice(jhno,jhhit);
 		
 		request.setAttribute("j", j);
-		request.getRequestDispatcher("jhnoticeDetail.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/View/customer/jhnoticeDetail.jsp").forward(request, response);
 	}
 
 }
