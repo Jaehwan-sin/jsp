@@ -27,8 +27,8 @@ public class JHEditProcController implements Controller {
 		dao.edit(jhno,jhtitle,jhcontent);
 		
 		request.setAttribute("j", j);
-		request.getRequestDispatcher("jhnoticeDetail.jsp").forward(request, response);
-		
+		// request.getRequestDispatcher("jhnoticeDetail.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/View/customer/jhnoticeDetail.jsp?c="+jhno).forward(request, response);
 	}
 	
 }

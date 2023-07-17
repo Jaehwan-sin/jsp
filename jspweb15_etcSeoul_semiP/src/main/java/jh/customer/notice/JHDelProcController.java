@@ -11,15 +11,15 @@ public class JHDelProcController implements Controller {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println("JHNoticeDelProcController");
-		
-		
+				
 		String jhno = request.getParameter("c");
 		
 		JHNoticeDao dao = new JHNoticeDao();
 		dao.delete(jhno);
 		
-		response.sendRedirect("/src/main/webapp/WEB-INF/View/customer/jhnotice.jsp");
-	
+		// response.sendRedirect("/src/main/webapp/WEB-INF/View/customer/jhnotice.jsp");
+		// response.sendRedirect("/customer/jhnotice.do");
+		request.getRequestDispatcher("/WEB-INF/View/customer/jhnotice.jsp").forward(request, response);
 	}
 
 }

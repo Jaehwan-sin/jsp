@@ -40,8 +40,11 @@
 	<input type="button" value="삭제" onclick="location.href='jhnoticeDelProc.do?c=${j.jhno }'" />
 </div>
 <hr />
-<c:if test="${j.jhfile ne null }" >
+<c:if test="${j.jhfile ne null }" > 
 	<img src="./jhupload/${j.jhfile }" width="400" height="300" /> <br />
+	<td>${j.jhcontent }</td> 
+</c:if>
+<c:if test="${j.jhfile eq null }" > 
 	<td>${j.jhcontent }</td> 
 </c:if>
 <hr />

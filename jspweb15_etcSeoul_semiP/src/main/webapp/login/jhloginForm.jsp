@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../css/jhjoin_style.css" />
+<link rel="stylesheet" href="../css/jhlogin_style.css" />
 <script>
 
 function checkValue() {
@@ -41,8 +41,9 @@ function goJoinForm() {
 			<td><input type="password" name="password" maxlength="40" /></td>
 		</tr>
 	</table>
-	<input type="submit" value="login" />
-	<input type="button" value="join" onclick="goJoinForm()" />
+	<br />
+	<input type="submit" value="LOGIN" />
+	<input type="button" value="JOIN" onclick="goJoinForm()" />
 </form>
 <%
 	String msg = request.getParameter("msg");

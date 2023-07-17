@@ -13,6 +13,7 @@ public class JHNoticeRegController implements Controller {
 		
 		request.getRequestDispatcher("/WEB-INF/View/customer/jhnoticeReg.jsp").forward(request,response);
 		
+		
 	}
 
 }

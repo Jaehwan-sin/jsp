@@ -12,7 +12,8 @@ public class JHLogoutProcController implements Controller {
 		System.out.println("JHLogoutProcController");
 		
 		request.getSession().invalidate();
-		response.sendRedirect("../customer/jhnotice.jsp");
+		// response.sendRedirect("../customer/jhnotice.jsp");
+		request.getRequestDispatcher("/WEB-INF/View/customer/jhnotice.jsp").forward(request, response);
 	}
 
 }

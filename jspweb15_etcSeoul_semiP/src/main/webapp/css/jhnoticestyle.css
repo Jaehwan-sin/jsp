@@ -22,16 +22,12 @@ body {
 	text-align : left;
 	font-size : 20px;
 	color : black;
+	padding-top: 5px;
 }
 #search{
 	text-align : center;
 }
-#title a {
-  color: black;
-}
-#title a:hover {
-  /* 아무런 스타일 변화가 없음 */
-}
+#title a:hover {}
 #q{
 	size : 20;
 }
@@ -45,10 +41,23 @@ td{
 #searchbtn{
 	background-color: black;
 	color : white;
+	border: none;
 }
 .btn-log{
 	display : inline-block;	
 }
 hr{
 	width : 90%;
+}
+input[type="button"] {
+	text-align : right;
+	padding : 5px;
+}
+.separator {
+    border-bottom: 1px solid grey;
+    height : 5px;
+}
+select, input[type="text"], input[type="submit"] {
+    padding: 8px;
+    font-size: 16px;
 }

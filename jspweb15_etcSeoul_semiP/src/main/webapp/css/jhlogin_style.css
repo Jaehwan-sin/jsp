@@ -1,0 +1,9 @@
+body,table {
+	text-align : center;
+	margin : auto;
+	font-family: Arial, sans-serif;
+}
+input[type="submit"],input[type="button"] {
+	background-color: black;
+	color : white;
+}

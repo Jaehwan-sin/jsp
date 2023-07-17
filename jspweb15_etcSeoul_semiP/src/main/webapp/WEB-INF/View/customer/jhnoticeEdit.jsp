@@ -12,39 +12,34 @@
 </head>
 <body>
 <h2>jhEdit</h2>
-<%
-	/* String jhno = request.getParameter("c");
-	String sql = "select jhno,jhtitle,jhwriter,jhcontent,jhdate,jhhit from jhetcseoul where jhno="+jhno;
-	
-	Connection con = DBCon.getConnection();
-
-	Statement stmt = con.createStatement();
-	ResultSet rs = stmt.executeQuery(sql);
-	rs.next(); */
-	JHNotice j = (JHNotice)request.getAttribute("j");
-%>
+<script>
+	function cancelbtn() {
+		history.back();
+	}
+</script>
 <form action="jhnoticeEditProc.do" method="post">
 <table>
 	<tr>
-		<th id="title">
-		<input type="text" name="jhtitle" value="<%=j.getJhtitle() %>" />
-		</th>
+		<td id="title">
+			<div id="jhtitle" >제목</div> <input type="text" name="jhtitle" value="${j.jhtitle }" />
+		</td>
 	</tr>
 	<tr id="etc">
-	<td><%=j.getJhdate() %>  |</td>  
-	<td><%=j.getJhwriter() %>  |</td>
-	<td><%=j.getJhhit() %>  </td>
+		<td>${j.jhdate } |</td> 
+		<td>${j.jhwriter} |</td>
+		<td>${j.jhhit}  </td>
 	</tr>
 	<td id="line">
-		<textarea name="jhcontent" id="jhcontent" cols="30" rows="10"><%=j.getJhcontent() %></textarea>
+		<div id="jhcontent">내용</div> <br />
+		<textarea name="jhcontent" cols="30" rows="10">${j.jhcontent }</textarea>
 	</td>	
 </table>
-
 	<hr />
-<input type="hidden" name="c" value="<%=j.getJhno() %>" />
-<input type="submit" value="수정하기" />
-<a href="jhnoticeDetail.jsp?c=<%=j.getJhno() %>">취소</a>
-
+<div id="button">
+	<input type="hidden" name="c" value="${j.jhno }" />
+	<input type="submit" value="수정하기" />
+	<input type="button" value="취소" onclick="cancelbtn()"/>
+</div>
 </form>
 </body>
 </html>

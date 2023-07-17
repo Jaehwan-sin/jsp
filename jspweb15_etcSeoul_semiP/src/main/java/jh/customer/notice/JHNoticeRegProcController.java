@@ -21,7 +21,7 @@ public class JHNoticeRegProcController implements Controller {
 		ServletContext ctx = request.getServletContext();
 		path = ctx.getRealPath(path);
 		System.out.println("real path : "+path);
-		path = "C:\\Users\\woghk\\git\\jsp\\jsp\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\jspweb15_etcSeoul_semiP\\customer\\jhupload";
+		path = "C:\\Users\\goott04\\git\\jsp\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\jspweb15_etcSeoul_semiP\\customer\\jhupload";
 		
 		MultipartRequest req = new MultipartRequest(request,path,10*1024*1024,"utf-8",new DefaultFileRenamePolicy());
 		
@@ -42,7 +42,8 @@ public class JHNoticeRegProcController implements Controller {
 		JHNoticeDao dao = new JHNoticeDao();
 		dao.insert(j);
 		
-		response.sendRedirect("/WEB-INF/View/customer/jhnotice.jsp");
+		// response.sendRedirect("/src/main/webapp/WEB-INF/View/customer/jhnotice.jsp");
+		request.getRequestDispatcher("/WEB-INF/View/customer/jhnotice.jsp").forward(request, response);
 	}
 
 }

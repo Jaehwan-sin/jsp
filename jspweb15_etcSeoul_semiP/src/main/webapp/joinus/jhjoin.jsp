@@ -25,7 +25,7 @@ if(request.getAttribute("errors")!=null) {
 <form action="jhjoinProc.jsp">
 	<label for="id">아이디</label>
 		<input type="text" name="id" />
-		<input type="button" value="중복확인" />
+		<input type="button" value="중복확인" />	
 		<br />
 		
 		<label for="pwd">비밀번호</label>
@@ -50,13 +50,13 @@ if(request.getAttribute("errors")!=null) {
 		<label for="year">생년월일</label>
 		<input type="text" name="year" size="5"/>년
 		<input type="text" name="month" size="5"/>월
-		<input type="text" name="day" size="5"/>일
+		<input type="text" name="day" size="5"/>일 <br />		
 		
 		<input type="radio" name="IsLunar" value="Solar" checked />양력
 		<input type="radio" name="IsLunar" value="IsLunar" />음력 <br />
 		
 		<label for="name">핸드폰번호</label>
-		<input type="tel" name="cphone" /> 예) 010-1111-1111 <br />
+		<input type="tel" name="cphone" /> <div id="tel">예) 010-1111-1111</div> <br />
 		
 		<label for="email">이메일</label>
 		<input type="email" name="email" /> <br />
@@ -66,7 +66,8 @@ if(request.getAttribute("errors")!=null) {
 		<input type="checkbox" name="hobby" value="movie" /> 영화 
 		<input type="checkbox" name="hobby" value="trip" /> 여행 <br />
 		
-		<input type="submit" value="확인" />
+		<br />
+		<input type="submit" value="회원가입" />
 		
 </form>
 </body>

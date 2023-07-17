@@ -1,0 +1,30 @@
+진행상황(세부작업상황)
+로그인기능 완성
+로그아웃기능 완성
+게시판 리스트 완성
+게시판 글쓰기 완성
+게시판 수정 완성
+게시판 삭제 완성
+게시판 검색 완성
+
+프로젝트관련 sql작성
+
+테이블생성
+	create table jhetcseoul(
+	jhno varchar2(20),
+	jhtitle varchar2(200),
+	jhwriter varchar2(50),
+	jhcontent varchar2(1000),
+	jhdate date,
+	jhhit number);
+insert
+	insert into jhetcseoul values('1','제목1','작성자1','내용1',sysdate,'0');
+	insert into jhetcseoul values('2','제목2','작성자2','내용2',sysdate,'0');
+	insert into jhetcseoul values('3','제목3','작성자3','내용3',sysdate,'0');	
+update
+	update jhetcseoul set jhtitle='손흥민2',jhcontent='손흥민2' where jhno=11;
+del
+	delete from jhetcseoul where jhno='1';
+search
+	select jhno,jhtitle,jhwriter,jhcontent,jhdate,jhhit from jhetcseoul where jhcontent like '%3%' order by to_number(jhno) desc;
+기능별 캡쳐사진

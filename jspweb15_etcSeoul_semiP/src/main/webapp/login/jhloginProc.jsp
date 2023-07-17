@@ -42,9 +42,9 @@
 		session.setAttribute("sessionID", id);
 		msg = "../jhmainForm.jsp";
 	} else if (x==0) {
-		msg = "loginForm.jsp?msg=0";
+		msg = "jhloginForm.jsp?msg=0";
 	} else {
-		msg = "loginForm.jsp?msg=-1";
+		msg = "jhloginForm.jsp?msg=-1";
 	}
 		response.sendRedirect(msg);
 %>

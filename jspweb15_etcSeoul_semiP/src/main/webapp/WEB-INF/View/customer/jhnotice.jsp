@@ -17,14 +17,14 @@
 	
 	function openjoinpopup() {
 		var popupWidth = 600;
-		var popupHeight = 500;
+		var popupHeight = 800;
 		var left = (window.innerWidth - popupWidth) / 2;
 		var top = (window.innerHeight - popupHeight) / 2;
 		var popupFeatures = 'width=' + popupWidth + ', height=' + popupHeight + ', top=' + top + ', left=' + left;
 		window.open('../joinus/jhjoin.jsp', '_blank', popupFeatures);
 	}
 </script>
-<link rel="stylesheet" href="../css/jhstyle.css" />
+<link rel="stylesheet" href="../css/jhnoticestyle.css" />
 </head>
 <body>
 <h2>jhnotice</h2>
@@ -49,24 +49,25 @@
 	<tr>
 		<th id="title">
 			<a href="jhnoticedetail.do?c=${j.jhno }&h=${j.jhhit }" style="color: black; text-decoration: none;">${j.jhtitle}</a>
-
 		</th>	
 	</tr>
 	<tr id="etc">
 		<td>${j.jhdate }  |</td>
 		<td>${j.jhwriter }  |</td>
-		<td>${j.jhhit }</td>
-	</tr>
+		<td >${j.jhhit }</td>
+	</tr >
+	<tr class="separator">
+      <td colspan="3"></td>
+    </tr>
 	
 </c:forEach>
 
 </table>
-<hr />
+<br />
 <form action="jhnotice.do" id="search" method="get">
 	<select name="f">
 		<option value="jhtitle" ${param.f=="jhtitle"?"selected":"" }>제목</option>
 		<option value="jhcontent" ${param.f=="jhcontent"?"selected":"" } >내용</option>
-		<option value="writer" >작성자</option>
 	</select>
 	
 	<input type="text" name="q" value="${query }" id="q" onclick="clearVal()" />

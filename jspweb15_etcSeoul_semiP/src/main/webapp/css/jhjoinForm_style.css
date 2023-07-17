@@ -1,17 +1,20 @@
 body {
   font-family: Arial, sans-serif;
+  font-weight : bold;
+  text-align: center;
 }
 
 form {
   text-align: center;
   width: 300px;
-  margin: 0 auto;
+  margin: 0 auto; 
 }
 
 form label {
   display: block;
-  text-align: left;
+  text-align: center;
   padding-left: 5px;
+  font-size : 18px;
 }
 
 form input[type="text"],
@@ -19,9 +22,9 @@ form input[type="password"],
 form input[type="tel"],
 form input[type="email"],
 form select {
-	font : bold;
-  width: 100%;
-  box-sizing: border-box;
+  font : bold;
+  width: 80%;
+  box-sizing: content-box;
   padding: 5px;
 }
 
@@ -36,4 +39,19 @@ p {
 
 h2 {
   text-align: center;
+}
+#tel {
+	font-size : 14px;
+	color : grey;
+}
+input[type="button"],input[type="submit"] {
+	background-color: black;
+	color : white;
+	padding: 8px;
+    font-size: 16px;
+}
+
+form input[type="text"] {
+	margin-right : 5px;
+	margin-bottom : 5px;
 }
