@@ -20,7 +20,7 @@ public class NoticeRegProcController implements Controller {
 		ServletContext ctx = request.getServletContext();
 		path = ctx.getRealPath(path);
 		System.out.println("Real path : "+path);
-		path="C:\\Users\\goott04\\git\\jsp\\jspweb6_mvc9_updowning\\src\\main\\webapp\\customer\\upload";
+		path="C:\\Users\\goott04\\git\\jsp\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\jspweb6_mvc10_webinf\\customer\\upload";
 		
 		// multipart형식으로 데이터 받기
 		// DefaultFileRenamePolicy은 같은 이름이 들어올 경우 이름이 바뀌어서 저장한다.
