@@ -1,0 +1,25 @@
+body,table {
+	text-align : center;
+	font-family: Arial, sans-serif;
+	margin : 0 auto;	
+}
+input[type="submit"],input[type="button"] {
+	background-color: black;
+	color : white;
+}
+table {
+	border : 1px solid grey;
+}
+#file {
+	text-align : center;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
